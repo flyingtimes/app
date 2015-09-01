@@ -9,8 +9,18 @@
 <body>
   <div id="content"></div>
   <script>
+  var markdownString = '```js\n console.log("hello"); \n```';
+
+// Async highlighting with pygmentize-bundled
+marked.setOptions({
+  highlight: function (code, lang, callback) {
+    require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+      callback(err, result.toString());
+    });
+  }
+});
     document.getElementById('content').innerHTML =
-      marked('# this is only a test.\n## hello world for you!');
+      marked(markdownString);
   </script>
 </body>
 </html>
