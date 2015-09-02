@@ -4,12 +4,20 @@
   <meta charset="utf-8"/>
   <title>Marked in the browser</title>
   <script src="http://cdn.bootcss.com/marked/0.3.2/marked.min.js"></script>
+   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
 </head>
 <body>
+  <div class="am-form-group">
+      <label for="doc-ta-1">文本域</label>
+      <textarea class="" rows="5" id="doc-ta-1" onpropertychange="markdown_show()></textarea>
+  </div>
+  
   <div id="content"></div>
   <script>
+    function markdown_show(){
+    var st=document.getElementById('doc-ta-1').innerHTML;
     document.getElementById('content').innerHTML =
-      marked('# Marked in browser\n\nRendered by **marked**.');
+      marked(st);
   </script>
 </body>
 </html>
