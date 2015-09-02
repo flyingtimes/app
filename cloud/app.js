@@ -24,7 +24,7 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 app.get('/login', function(req, res) {
   // 渲染登录页面
-  res.render('login.ejs');
+  res.render('login1.ejs');
 });
 // 点击登录页面的提交将出发下列函数
 app.post('/login', function(req, res) {
