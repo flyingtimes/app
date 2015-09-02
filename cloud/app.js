@@ -32,7 +32,7 @@ app.post('/login', function(req, res) {
     //登录成功，AV.Cloud.CookieSession 会自动将登录用户信息存储到 cookie
     //跳转到profile页面。
     console.log('signin successfully: %j', user);
-    res.redirect('/main');
+    res.redirect('/markdown');
   },function(error) {
     //登录失败，跳转到登录页面
     res.redirect('/login');
@@ -44,6 +44,17 @@ app.get('/main', function(req, res) {
   if (req.AV.user) {
     // 如果已经登录，进入主页面。
     res.render('main.ejs',{ currentUser:req.AV.user.current });
+  } else {
+    // 没有登录，跳转到登录页面。
+    res.redirect('/login');
+  }
+});
+//调用markdown
+app.get('/markdown', function(req, res) {
+  // 判断用户是否已经登录
+  if (req.AV.user) {
+    // 如果已经登录，进入主页面。
+    res.render('markdown.ejs');
   } else {
     // 没有登录，跳转到登录页面。
     res.redirect('/login');
