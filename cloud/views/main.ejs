@@ -99,7 +99,9 @@
         <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章">
       </div>
       <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
-      <button type="submit" action="logout" class="am-btn am-btn-default am-btn-sm"><% currentUser %></button>
+    </form>
+    <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" action="/logout">
+      <button type="submit"  class="am-btn am-btn-default am-btn-sm"><% currentUser %></button>
     </form>
 
   </div>
