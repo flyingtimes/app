@@ -4,9 +4,9 @@
 var express = require('express');
 var AV = require('leanengine');
 //需要使用自己的应用 key 进行初始化中间件
-var APP_ID = process.env.LC_APP_ID || 'eGvB2ddA9Ar4ttx4cUl6lQRu'; // your app id
-var APP_KEY = process.env.LC_APP_KEY || '6kzRnSq6rzz3tYWUaiCgtBF2'; // your app key
-var MASTER_KEY = process.env.LC_APP_MASTER_KEY || ''; // your app master key
+var APP_ID = 'eGvB2ddA9Ar4ttx4cUl6lQRu'; // your app id
+var APP_KEY = '6kzRnSq6rzz3tYWUaiCgtBF2'; // your app key
+var MASTER_KEY = ''; // your app master key
 AV.initialize(APP_ID, APP_KEY, MASTER_KEY); 
 
 var app = express();
