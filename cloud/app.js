@@ -19,7 +19,7 @@ app.use(AV.Cloud.CookieSession({ secret: 'my secret', maxAge: 3600000, fetchUser
 
 app.get('/login', function(req, res) {
   // 渲染登录页面
-  res.render('login.ejs');
+  res.render('view/login.ejs');
 });
 // 点击登录页面的提交将出发下列函数
 app.post('/login', function(req, res) {
