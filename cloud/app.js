@@ -43,7 +43,7 @@ app.get('/main', function(req, res) {
   // 判断用户是否已经登录
   if (req.AV.user) {
     // 如果已经登录，进入主页面。
-    res.render('main.ejs',{ currentUser:req.AV.user.current();});
+    res.render('main.ejs',{ currentUser:req.AV.user.current });
   } else {
     // 没有登录，跳转到登录页面。
     res.redirect('/login');
